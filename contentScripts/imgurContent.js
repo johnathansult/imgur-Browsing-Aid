@@ -327,7 +327,7 @@ function addFavoriteCommentButtons() {
 	for (i = 0; i < commentOptionsButtons.length; i++) {
 		var favoriteCommentDiv = document.createElement("div");
 		favoriteCommentDiv.setAttribute("class", "favorite-comment");
-		favoriteCommentDiv.setAttribute("style", "text-align:left;padding-left:10px;;");
+		favoriteCommentDiv.setAttribute("style", "display:block;padding:10px;text-align:left;padding-left:10px;;");
 		var textNode = document.createTextNode("favorite");
 		favoriteCommentDiv.appendChild(textNode);
 		//console.log("added favorite comment button");
