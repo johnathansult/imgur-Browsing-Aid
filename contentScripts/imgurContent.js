@@ -190,6 +190,10 @@ function onCommentsLoaded() {
 	var d = new Date();
 	var currTime = d.getTime();
 	//console.log(currTime - lastCommentUpdateTime);
+    
+    // TODO: This timer-based cooldown may cause unexpected / buggy behavior.
+    // Case: Document loads, mutationObserver observes, and comments are in the middle of loading. onCommentsLoaded() is then called from imgurMain() while the comments are still loading.
+    //       Within 500ms, comments finish loading and mutationObserver calls onCommentsLoaded(). onCommentsLoaded() silently fails the second time, and some of the comments are untouched.
 	if (currTime - lastCommentUpdateTime > 500) {
 		if (removeViaMobileSpans)
 			removeViaElements();
