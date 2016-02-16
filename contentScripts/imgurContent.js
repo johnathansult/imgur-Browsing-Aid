@@ -146,7 +146,7 @@ function imgurContentMain() {
 			addBlockButton();
 			if (canSlideShow)
 				addToggleSlideShowButton();
-			if (skipViewed)
+			if (markIconsViewed)
 				addViewedTexts();
 			
 			//Give style to our added buttons and other elements.
@@ -169,7 +169,8 @@ function imgurContentMain() {
 				
 				if (sgItems.length > 0) {
 					clearInterval(checkThumbnails);
-					addViewedTexts();
+					if (markIconsViewed)
+                        addViewedTexts();
 				}
 				else if (checkCount >= 60) 
 					clearInterval(checkThumnails);
