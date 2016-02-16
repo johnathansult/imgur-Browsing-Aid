@@ -177,6 +177,10 @@ function imgurContentMain() {
 					checkCount++;
 			}, 500);
 		});
+                            
+        // Since our mutationObserver tends to load too late to catch their inclusion, check to see if the comments have already been loaded.
+        if (document.getElementsByClassName("comment").length > 0 || document.getElementsByClassName("comment have-children").length > 0)
+            onCommentsLoaded();
 	});
 }
 
