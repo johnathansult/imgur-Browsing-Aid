@@ -36,7 +36,7 @@ var mutationObserver = new MutationObserver( function(mutations) {
 				//The following node classNames all change once per new post: humanMsg, point-info left bold, views-info left
 			}
 			else if((mut.addedNodes[j].className.indexOf("comment") > -1 || mut.addedNodes[j].className.indexOf("children") > -1) && mut.addedNodes[j].className != "favorite-comment") {
-                // TODO: Convert this from a blanket onCommentsLoaded() call to executing the contents of that call on the nodeList at mut.addedNodes[j].
+				// TODO: Convert this from a blanket onCommentsLoaded() call to executing the contents of that call on the nodeList at mut.addedNodes[j].
 				onCommentsLoaded();
 			}
 		}
